@@ -1,0 +1,7 @@
+#Conexión a base de datos
+
+env_mysql:
+  SQL_HOST: 192.99.98.220
+  SQL_USER: mc82648
+  SQL_DATABASE: mc82648
+  SQL_PASSORD: 71ccd10c12
