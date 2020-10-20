@@ -1,31 +1,22 @@
 
 const helpers = require('../lib/helpers');
-let protalla ={};
+let talla ={};
 
-protalla.table= {name:'PROTALLA'}
+talla.table= {name:'TALLA'}
 
-protalla.columns ={
-    protallaId:{
-        column:'protalla_id',
+talla.columns ={
+    tallaId:{
+        column:'talla_id',
         primarykey:true
     },
-    productoId:{
-        column:'producto_id'
-    },
-    tallaId:{
-        column:'talla_id'
+    nombre:{
+        column:'nombre'
     },
     descripcion:{
         column:'descripcion'
     },
-    cantidad:{
-        column:'cantidad'
-    },
     estatusId:{
         column:'estatus_id'
-    },
-    eliminadoId:{
-        column:'eliminado_id'
     },
     usuarioCreacionId:{
         column:'usuario_creacion_id'
@@ -41,6 +32,6 @@ protalla.columns ={
     }
 };
 
-protalla = helpers.setFunctionsModels(protalla);
+talla = helpers.setFunctionsModels(talla);
 
-module.exports = protalla;
+module.exports = talla;

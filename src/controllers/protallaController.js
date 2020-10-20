@@ -12,7 +12,7 @@ protallaController.save =(req, res)=>{
     const rows = protalla.save(null,[
         body.protallaId,
         body.productoId,
-        body.talla,
+        body.tallaId,
         body.cantidad,
         body.estatusId,
         codeBss.NOELIMINADO,
@@ -28,5 +28,15 @@ protallaController.save =(req, res)=>{
     }
 
 };
+
+protallaController.findAll = async(req,res)=>{
+    const tipoConsulta =  ((parseInt(req.params.tipoConsulta) == 1))? true:false;
+    var result = await protalla.findAll(undefined,tipoConsulta);
+    if(result !=null){ 
+        res.status(200).json({errorMessage:'',proTallas:result});
+    }else{
+        res.status(500).json({errorMessage:'Error en el srvidor'});
+    }
+}
 
 module.exports = protallaController;

@@ -43,6 +43,7 @@ app.use('/arathsBaby/usuarios', require('./routes/usuario'));
 app.use('/arathsBaby/categorias', require('./routes/categoria'));
 app.use('/arathsBaby/proveedores', require('./routes/proveedor'));
 app.use('/arathsBaby/productos', require('./routes/producto'));
+app.use('/arathsBaby/tallas', require('./routes/talla'));
 app.use('/arathsBaby/productos_tallas/', require('./routes/protalla'));
 
 
