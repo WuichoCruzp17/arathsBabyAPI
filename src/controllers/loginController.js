@@ -11,7 +11,7 @@ loginController.login =async (req, res)=> {
 loginController.getUser = async(login)=>{
     var rows = null;
 
-            rows = await usuarioController.findByProperty('nombre',login.username);
+            rows = await usuarioController.findByProperty('nombreUsuario',login.username);
 
     return rows;
 };

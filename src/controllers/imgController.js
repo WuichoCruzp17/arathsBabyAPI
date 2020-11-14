@@ -11,8 +11,9 @@ fs.readFile = promisify(fs.readFile);
 base64Img.img = promisify(base64Img.img);
 
 imgController.save = async(img)=>{
-
-    var base64Data = img["upload[path]"];
+    console.log(img)
+    console.log("Incia Proceso de guardado de imagen")
+    var base64Data = img.upload.path;
     var crypto = require('crypto'); 
     var imageTypeRegularExpression = /\/(.*?)$/; 
     var isSave = false;
@@ -24,8 +25,8 @@ imgController.save = async(img)=>{
     var uniqueRandomImageName = 'image-' + uniqueSHA1String;
     console.log(`Nombre de IMG ${uniqueRandomImageName}` );
     nombreImg = uniqueRandomImageName;
-    var imageBuffer = decodeBase64Image(img["upload[path]"]);
-    var imageTypeDetected = imageBuffer.type.match(imageTypeRegularExpression);
+    var imageBuffer = decodeBase64Image(img.upload.path);
+    //var imageTypeDetected = imageBuffer.type.match(imageTypeRegularExpression);
     nombreImg = uniqueRandomImageName;
     var dirr = __dirname.split('\controllers')[0];
     var dirrProduct =dirr + `public/assets/productos/`;
@@ -41,7 +42,7 @@ imgController.save = async(img)=>{
     }
     
     console.log("Return");
-    nombreImg=nombreImg+"."+img["upload[ext]"];
+    nombreImg=nombreImg+"."+img.upload.ext;
     return {isSave,nombreImg}; 
 };  
 

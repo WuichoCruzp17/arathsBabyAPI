@@ -2,6 +2,7 @@ const utilModel = {};
 const pool = require('../database');
 const {NOELIMINADO,ELIMINADO, ACTIVO} = require('../resources/codeBss');
 const genericDAO = require('../DAO/genericDAO');
+const { convertColumns } = require('../lib/util');
 
 utilModel.save = async function (cols, params) {
         const row = await genericDAO.execute(`INSERT INTO ${this.table.name} VALUES(${this.saveColumns(cols)})`,params);
@@ -165,7 +166,9 @@ utilModel.select = async function (columns, complement) {
         query += (columns !== undefined && columns != null) ? ` ${columns} ` : " * ";
         query += `FROM ${this.table.name} `
         query += (complement !== undefined && complement !== null) ? ` ${complement} ` : '';
-        const row = pool.query(query);
+        console.log(query);
+        const row =await  pool.query(query);
+        console.log(row);
         return row;
     } catch (err) {
         console.log(err);

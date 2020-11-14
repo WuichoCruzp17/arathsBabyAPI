@@ -11,6 +11,18 @@ usuario.columns ={
     nombre:{
         column:'nombre'
     },
+    segundoNombre:{
+        column:'segundoNombre'
+    },
+    apellidoPaterno:{
+        column:'apellidoPaterno'
+    },
+    apellidoMaterno:{
+        column:'apellidoMaterno'
+    },
+    nombreUsuario:{
+        column:'nombreUsuario'
+    },
     direccion:{
         column:'direccion'
     },
