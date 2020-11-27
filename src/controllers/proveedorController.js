@@ -83,7 +83,7 @@ proveedorController.findById = async(req,res)=>{
 };
 
 proveedorController.findAll  = async (req,res)=>{
-    const tipoConsulta =  ((parseInt(req.params.tipoConsulta) == 1))? true:false;
+    const tipoConsulta =  (parseInt(req.params.tipoConsulta) == 1)? true:false;
     var result = await proveedor.findAll(undefined,tipoConsulta);
     if(result !=null){ 
         res.status(200).json({errorMessage:'',proveedores:result});

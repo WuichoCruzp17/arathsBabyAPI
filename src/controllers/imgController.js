@@ -3,6 +3,7 @@ const path = require('path');
 const multer = require('multer');
 const {promisify} = require('util');
 const base64Img = require('base64-img');
+var atob = require('atob');
 /* const multer = require('multer');
 const upload = multer({dest:path.join(__dirname,'../public/assets/temp')}).single('image'); */
 const imgController =  {};
@@ -13,7 +14,7 @@ base64Img.img = promisify(base64Img.img);
 imgController.save = async(img)=>{
     console.log(img)
     console.log("Incia Proceso de guardado de imagen")
-    var base64Data = img.upload.path;
+    var base64Data = atob(img.upload.path);
     var crypto = require('crypto'); 
     var imageTypeRegularExpression = /\/(.*?)$/; 
     var isSave = false;
@@ -25,7 +26,7 @@ imgController.save = async(img)=>{
     var uniqueRandomImageName = 'image-' + uniqueSHA1String;
     console.log(`Nombre de IMG ${uniqueRandomImageName}` );
     nombreImg = uniqueRandomImageName;
-    var imageBuffer = decodeBase64Image(img.upload.path);
+    //var imageBuffer = decodeBase64Image(img.upload.path);
     //var imageTypeDetected = imageBuffer.type.match(imageTypeRegularExpression);
     nombreImg = uniqueRandomImageName;
     var dirr = __dirname.split('\controllers')[0];

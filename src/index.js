@@ -23,11 +23,11 @@ app.use(session({
     store: new mysqlStore(database)
 }));
  //Guardar la imagen en la carpeta de temp
- app.use(multer({dest:path.join(__dirname,'../public/assets/temp')}).single('image'));
+// app.use(multer({dest:path.join(__dirname,'../public/assets/temp')}).single('image'));
 app.use(flash());//Enviar mensajes
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended:false}));
-app.use(bodyParser.json());
+app.use(bodyParser.json({ limit: '5mb' }));
 /**app.use(passport.initialize());
 app.use(passport.session());**/
 //Global Variables
@@ -46,6 +46,7 @@ app.use('/arathsBaby/proveedores', require('./routes/proveedor'));
 app.use('/arathsBaby/productos', require('./routes/producto'));
 app.use('/arathsBaby/tallas', require('./routes/talla'));
 app.use('/arathsBaby/productos_tallas/', require('./routes/protalla'));
+app.use('/arathsBaby/image/', require('./routes/image'));
 
 
 //Public

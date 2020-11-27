@@ -65,4 +65,25 @@ protallaController.findAll = async(req,res)=>{
     }
 }
 
+protallaController.findByProperty= async(req, res)=>{
+    var result =null;
+    if(typeof req =="string"){
+        //req = property y res = valor
+        result =  await protalla.findByProperty(req,res);
+        if(result != null){
+            return result;
+        }else{
+            return [];
+        }
+    }else{
+        result = await protalla.findByProperty(req.params.property, req.params.value);
+        if(result != null){
+            res.status(200).json({errorMessage:'',tallas:result});
+        }else{
+            res.status(500).json({errorMessage:'Error en el srvidor'});
+        }
+    }
+
+}
+
 module.exports = protallaController;

@@ -26,9 +26,6 @@ producto.columns ={
     categoriaId:{
         column:'categoria_id'
     },
-    categoriaId:{
-        column:'categoria_id'
-    },
     proveedorId:{
         column:'proveedor_id'
     },
