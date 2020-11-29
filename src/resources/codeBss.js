@@ -1,8 +1,8 @@
 const codes ={
-    NOELIMINADO:3,
-    ELIMINADO:4,
+    NOELIMINADO:4,
+    ELIMINADO:2,
     ACTIVO:1,
-    INACTIVO:2,
+    INACTIVO:3,
     IDIOMA:4,
     ESTATUS:1,
     ESTATUS_ELIMANDO:2,

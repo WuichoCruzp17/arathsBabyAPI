@@ -47,6 +47,8 @@ app.use('/arathsBaby/productos', require('./routes/producto'));
 app.use('/arathsBaby/tallas', require('./routes/talla'));
 app.use('/arathsBaby/productos_tallas/', require('./routes/protalla'));
 app.use('/arathsBaby/image/', require('./routes/image'));
+app.use('/arathsBaby/pedidos/', require('./routes/pedido'));
+app.use('/arathsBaby/ciudades/', require('./routes/ciudad'));
 
 
 //Public
