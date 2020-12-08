@@ -3,7 +3,11 @@ const pool = require('../database');
 const {NOELIMINADO,ELIMINADO, ACTIVO} = require('../resources/codeBss');
 const genericDAO = require('../DAO/genericDAO');
 const { convertColumns } = require('../lib/util');
-
+/**
+ * Función generica de guardado.
+ * @param {*} cols 
+ * @param {*} params 
+ */
 utilModel.save = async function (cols, params) {
         const row = await genericDAO.execute(`INSERT INTO ${this.table.name} VALUES(${this.saveColumns(cols)})`,params);
         return row;

@@ -35,6 +35,9 @@ pedido.columns={
     descripcionCasa:{
         column:'descripcion_casa'
     },
+    folioPago:{
+        column:'folio_pago'
+    },
     paqueteriaId:{
         column:'paqueteria_id'
     },
@@ -43,6 +46,12 @@ pedido.columns={
     },
     estatusId:{
         column:'estatus_id'
+    },
+    fechaCreacion:{
+        column:'fecha_creacion'
+    },
+    fechaModifico:{
+        column:'fecha_modifico'
     }
 }
 

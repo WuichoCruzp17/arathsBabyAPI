@@ -11,9 +11,6 @@ pedidoDetalle.columns={
     pedidoId:{
         column:'pedido_id'
     },
-    ciudadId:{
-        column:'ciudad_id'
-    },
     productId:{
         column:'product_id'
     },
@@ -23,7 +20,10 @@ pedidoDetalle.columns={
     precio:{
         column:'precio'
     },
-    estatus_id:{
+    protallaId:{
+        column:'protalla_id',
+    },
+    estatusId:{
         column:'estatus_id'
     }
 }
