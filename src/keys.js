@@ -11,5 +11,6 @@ module.exports ={
           user: 'luis.segura@novasys.com.mx',
           pass: ''
         }
-    }
+    },
+    token:'EAAFlHZBxxzSkBAANC0T84VqsSHado6TJ7JO8kZAPuISisZA0ifm4JtMYrgsvfLXW1AhHUZAfD30ZBJS34EwzN0SezjJ1Cob1nIgLzcC4hwezvlcJXgRA3xKyVJ4dExtRPunlFetq4ZA4jExmrUSNvNyOlyJBvWwtwyb92vk7ZBd9gZDZD'
 };
